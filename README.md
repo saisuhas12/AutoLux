@@ -3,7 +3,7 @@
 ## Project Overview
 
 **AutoLux** is a bespoke web application designed to streamline the management of a pre-owned luxury car inventory for a premium dealership.  
-[cite_start]The system addresses the complexity and time-consuming nature of managing high-value vehicle inventory, sales, and customer interactions by providing a secure, streamlined platform with detailed specifications, brand-specific information, and powerful search capabilities[cite: 5].
+[cite_start]The system addresses the complexity and time-consuming nature of managing high-value vehicle inventory, sales, and customer interactions by providing a secure, streamlined platform with detailed specifications, brand-specific information, and powerful search capabilities[cite:5].
 
 [cite_start]The system is specifically designed for a **single administrative user** to manage all core activities[cite: 5].
 
