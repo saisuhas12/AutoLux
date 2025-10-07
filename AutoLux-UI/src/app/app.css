@@ -1,0 +1,28 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0d0d0d, #1a1a1a);
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+}
+
+.app-main {
+  flex: 1;
+  padding: 1rem;
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(8px);
+  overflow-y: auto;
+}
+
+@media (min-width: 576px) {
+  .app-main {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .app-main {
+    padding: 2rem;
+  }
+}

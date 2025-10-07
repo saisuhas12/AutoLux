@@ -1,0 +1,152 @@
+<div class="lux-auth-container animated-card">
+  <!-- Tabs -->
+  <ul class="nav nav-tabs nav-justified mb-4 lux-tabs" id="authTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="signin-tab" data-bs-toggle="tab" data-bs-target="#signin"
+        type="button" role="tab" aria-controls="signin" aria-selected="true">
+        <i class="bi bi-box-arrow-in-right me-1"></i>
+        Sign In
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register"
+        type="button" role="tab" aria-controls="register" aria-selected="false">
+         <i class="bi bi-person-plus me-1"></i>
+        Register
+      </button>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="authTabContent">
+    <!-- LOGIN TAB -->
+    <div class="tab-pane fade show active" id="signin" role="tabpanel">
+      <h4 class="text-center lux-heading">User Login</h4>
+      <form class="p-lg-4" #signinForm="ngForm" (ngSubmit)="onSignin(signinForm)">
+        <div class="text-center">
+          <img src="https://thumbs.dreamstime.com/b/color-sport-car-shiny-circle-logo-design-illustrated-front-106608352.jpg"
+            class="img-fluid profile-image-pic img-thumbnail rounded-circle  lux-profile" width="200px" alt="profile" />
+        </div>
+
+        <!-- Username -->
+        <div class="mb-3">
+          <label for="signinUsername" class="form-label text-gold">
+            <i class="bi bi-person me-1"></i>Username
+          </label>
+          <input type="text" class="form-control lux-input" id="signinUsername" name="username"
+            [(ngModel)]="signinModel.username" #usernameField="ngModel" required minlength="3"
+            [class.is-invalid]="usernameField.invalid && usernameField.touched"
+            placeholder="Enter your username" />
+          <div class="invalid-feedback" *ngIf="usernameField.invalid && usernameField.touched">
+            <span *ngIf="usernameField.errors?.['required']">Username is required</span>
+            <span *ngIf="usernameField.errors?.['minlength']">Username must be at least 3 characters</span>
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+          <label for="signinPassword" class="form-label text-gold">
+            <i class="bi bi-lock me-1"></i>Password
+          </label>
+          <input type="password" class="form-control lux-input" id="signinPassword" name="password"
+            [(ngModel)]="signinModel.password" #passwordField="ngModel" required minlength="6"
+            [class.is-invalid]="passwordField.invalid && passwordField.touched"
+            placeholder="Enter your password" />
+          <div class="invalid-feedback" *ngIf="passwordField.invalid && passwordField.touched">
+            <span *ngIf="passwordField.errors?.['required']">Password is required</span>
+            <span *ngIf="passwordField.errors?.['minlength']">Password must be at least 6 characters</span>
+          </div>
+        </div>
+
+        <!-- Success Message -->
+        <div class="alert alert-success d-flex align-items-center" *ngIf="signinSuccess">
+          <i class="bi bi-check-circle me-2"></i>{{ signinSuccess }}
+        </div>
+
+        <!-- Error Message -->
+        <div class="alert alert-danger d-flex align-items-center" *ngIf="signinError">
+          <i class="bi bi-exclamation-triangle me-2"></i>{{ signinError }}
+        </div>
+
+        <!-- Button -->
+        <button type="submit" class="lux-btn w-100 mb-3" [disabled]="signinLoading">
+          <span *ngIf="signinLoading" class="spinner-border spinner-border-sm me-2" role="status"></span>
+          <i class="bi bi-box-arrow-in-right me-1" *ngIf="!signinLoading"></i>
+          {{ signinLoading ? "Signing In..." : "Sign In" }}
+        </button>
+      </form>
+    </div>
+
+    <!-- REGISTER TAB -->
+    <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+              <h4 class="text-center lux-heading ">Register New User</h4>
+      <form #registerForm="ngForm" (ngSubmit)="onRegister(registerForm)" class="register-form p-lg-4">
+        <div class="text-center">
+          <img src="https://thumbs.dreamstime.com/b/color-sport-car-shiny-circle-logo-design-illustrated-front-106608352.jpg"
+            class="img-fluid profile-image-pic img-thumbnail rounded-circle lux-profile" width="300px" alt="register-icon" />
+        </div>
+
+
+        <!-- Username -->
+        <div class="mb-3">
+          <label class="form-label text-gold">
+            <i class="bi bi-person me-1"></i>Username
+          </label>
+          <input type="text" class="form-control lux-input" id="registerUsername" name="regUsername"
+            [(ngModel)]="registerModel.username" #regUsernameField="ngModel" required minlength="3"
+            [class.is-invalid]="regUsernameField.invalid && regUsernameField.touched"
+            placeholder="Choose a username" />
+          <div class="invalid-feedback" *ngIf="regUsernameField.invalid && regUsernameField.touched">
+            <span *ngIf="regUsernameField.errors?.['required']">Username is required</span>
+            <span *ngIf="regUsernameField.errors?.['minlength']">Username must be at least 3 characters</span>
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+          <label class="form-label text-gold">
+            <i class="bi bi-lock me-1"></i>Password
+          </label>
+          <input type="password" class="form-control lux-input" id="registerPassword" name="regPassword"
+            [(ngModel)]="registerModel.password" #regPasswordField="ngModel" required minlength="6"
+            [class.is-invalid]="regPasswordField.invalid && regPasswordField.touched"
+            placeholder="Create a password" />
+          <div class="invalid-feedback" *ngIf="regPasswordField.invalid && regPasswordField.touched">
+            <span *ngIf="regPasswordField.errors?.['required']">Password is required</span>
+            <span *ngIf="regPasswordField.errors?.['minlength']">Password must be at least 6 characters</span>
+          </div>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="mb-3">
+          <label class="form-label text-gold"><i class="bi bi-lock-fill me-1"></i>Confirm Password</label>
+          <input type="password" class="form-control lux-input" id="confirmPassword" name="confirmPassword"
+            [(ngModel)]="registerModel.confirmPassword" #confirmPasswordField="ngModel" required
+            [class.is-invalid]="(confirmPasswordField.invalid && confirmPasswordField.touched) || (!passwordsMatch() && registerModel.confirmPassword.length > 0)"
+            placeholder="Confirm your password" />
+          <div class="invalid-feedback"
+            *ngIf="(confirmPasswordField.invalid && confirmPasswordField.touched) || (!passwordsMatch() && registerModel.confirmPassword.length > 0)">
+            <span *ngIf="confirmPasswordField.errors?.['required']">Confirm password is required</span>
+            <span *ngIf="!passwordsMatch() && registerModel.confirmPassword.length > 0">Passwords do not match</span>
+          </div>
+        </div>
+
+        <!-- Success Message -->
+        <div class="alert alert-success d-flex align-items-center" *ngIf="registerSuccess">
+          <i class="bi bi-check-circle me-2"></i>{{ registerSuccess }}
+        </div>
+
+        <!-- Error Message -->
+        <div class="alert alert-danger d-flex align-items-center" *ngIf="registerError">
+          <i class="bi bi-exclamation-triangle me-2"></i>{{ registerError }}
+        </div>
+
+        <!-- Button -->
+        <button type="submit" class="lux-btn w-100 mb-3" [disabled]="registerLoading">
+          <span *ngIf="registerLoading" class="spinner-border spinner-border-sm me-2" role="status"></span>
+          <i class="bi bi-person-plus me-1" *ngIf="!registerLoading"></i>
+          {{ registerLoading ? "Creating Account..." : "Create Account" }}
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

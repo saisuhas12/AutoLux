@@ -1,0 +1,18 @@
+.premium-footer {
+  background: linear-gradient(90deg, #000000, #111111);
+  border-top: 1px solid rgba(255, 215, 0, 0.15);
+  color: #aaa;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+.premium-footer i {
+  color: gold;
+}
+.premium-footer p span{
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.premium-footer:hover p {
+  color: gold;
+}

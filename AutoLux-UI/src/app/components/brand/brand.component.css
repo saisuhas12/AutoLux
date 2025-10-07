@@ -1,0 +1,86 @@
+/* Container spacing */
+.container {
+  max-width: 1100px;
+}
+
+/* Gradient header text and buttons */
+.gradient-color {
+  background: linear-gradient(90deg, #882311, #671818);
+  
+}
+
+.btn.gradient-color {
+  background: linear-gradient(90deg, #882311, #671818);
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn.gradient-color:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+/* Card styling */
+.card {
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card-header.gradient-color {
+  background: linear-gradient(90deg, #882311, #671818);
+  color: #fff !important;
+  font-weight: 600;
+  border-top-left-radius: 12px !important;
+  border-top-right-radius: 12px !important;
+}
+
+/* Table styling */
+.table thead {
+  background-color: #1f2937 !important;
+  color: #fff;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+/* No brands section */
+.text-muted i {
+  font-size: 3rem;
+  opacity: 0.6;
+}
+
+/* Form inputs */
+.form-control.is-invalid {
+  border-color: #dc2626;
+  box-shadow: none;
+}
+
+/* Spinner */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Button group adjustments */
+.btn-group .btn {
+  min-width: 36px;
+  padding: 4px 6px;
+}
+
+/* Alert messages */
+.alert {
+  border-radius: 8px;
+}
+
+/* Transition for form cards */
+.card-body,
+.table {
+  transition: all 0.2s ease-in-out;
+}

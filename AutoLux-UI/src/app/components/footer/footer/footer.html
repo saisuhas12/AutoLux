@@ -1,0 +1,52 @@
+<!-- <footer
+  class="footer-background text-light py-4 mt-auto gradient-color w-100"
+  style="border-radius: 0 !important ;background: linear-gradient(135deg, #700f18, #584d4d,white)"
+>
+  <div class="container-fluid">
+    <div class="row">
+      <p class="text-center mb-1 small">
+        <i class="bi bi-c-circle me-1"></i>
+        {{ currentYear }} Products App. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer> -->
+<footer
+  class="footer-background text-light py-4 mt-auto gradient-color w-100"
+>
+  <div class="container-fluid">
+    <!-- Links Section -->
+    <ul class="nav justify-content-center mb-2">
+      <li class="nav-item">
+        <a
+          class="nav-link fw-semibold rounded-2 mx-1 d-flex align-items-center text-light"
+          routerLink="/about"
+          routerLinkActive="active"
+        >
+          <i class="bi bi-info-circle me-1 me-sm-2" style="color: gold;"></i>
+          <span class="d-none d-lg-inline" style="color: gold;">About Us</span>
+          <span class="d-inline d-lg-none" style="color: gold;">About</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link fw-semibold rounded-2 mx-1 d-flex align-items-center text-light"
+          routerLink="/contact"
+          routerLinkActive="active"
+        >
+          <i class="bi bi-envelope me-1 me-sm-2" style="color: gold;"></i>
+          <span class="d-none d-lg-inline" style="color: gold;">Contact Us</span>
+          <span class="d-inline d-lg-none" style="color: gold;">Contact</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Copyright Section -->
+    <div class="row">
+      <p class="text-center mb-1 small">
+        <i class="bi bi-c-circle me-1"></i>
+        {{ currentYear }} AutoLux. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>

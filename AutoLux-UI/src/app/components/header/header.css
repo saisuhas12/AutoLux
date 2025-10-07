@@ -1,0 +1,65 @@
+.premium-navbar {
+  background: linear-gradient(90deg, #000000, #111111);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+  padding: 0.6rem 1rem;
+}
+
+.premium-brand {
+  color: gold !important;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.premium-brand i {
+  color: gold;
+  font-size: 1.6rem;
+  transition: transform 0.3s ease;
+}
+
+.premium-brand:hover {
+  color: #ffd700;
+  transform: scale(1.05);
+}
+.premium-brand:hover i {
+  transform: rotate(12deg);
+}
+
+.nav-link {
+  color: #ccc !important;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  padding: 0.5rem 0.8rem;
+}
+.nav-link:hover {
+  background: rgba(255, 215, 0, 0.1);
+  color: gold !important;
+  transform: translateY(-2px);
+}
+.nav-link.active {
+  background: rgba(255, 215, 0, 0.15);
+  color: gold !important;
+  font-weight: bold;
+}
+
+.premium-dropdown {
+  background: #111;
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  border-radius: 8px;
+  padding: 0.3rem;
+}
+.premium-dropdown .dropdown-item {
+  color: #ccc;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+.premium-dropdown .dropdown-item:hover {
+  background: rgba(255, 215, 0, 0.1);
+  color: gold;
+}
+
+@media (max-width: 991.98px) {
+  .nav-link {
+    margin-bottom: 0.3rem;
+  }
+}

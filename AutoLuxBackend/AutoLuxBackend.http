@@ -1,0 +1,6 @@
+@AutoLuxBackend_HostAddress = http://localhost:5176
+
+GET {{AutoLuxBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

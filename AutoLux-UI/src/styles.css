@@ -1,0 +1,89 @@
+/* Theme Variables */
+:root {
+  --primary-color: #d4af37; /* gold */
+  --primary-hover: #e5c158;
+  --secondary-color: #0d0d0d; /* deep black */
+  --accent-color: #00f0ff; /* subtle neon cyan */
+  --text-color: #f5f5f5;
+  --muted-text: #b3b3b3;
+  --border-color: rgba(212, 175, 55, 0.2);
+  --transition-speed: 0.3s;
+}
+
+/* Reset */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, #0d0d0d, #1a1a1a);
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Global Link Styling */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-speed), text-shadow var(--transition-speed);
+}
+a:hover {
+  color: var(--primary-hover);
+  text-shadow: 0 0 5px var(--accent-color);
+}
+
+/* Buttons */
+button, .btn {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+button:hover, .btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* Cards */
+.card {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1rem;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--secondary-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-hover);
+}
+
+/* Utility */
+.text-muted {
+  color: var(--muted-text) !important;
+}
+.text-gold {
+  color: var(--primary-color) !important;
+}
+.bg-dark-blur {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+}
+/* You can add global styles to this file, and also import other style files */
